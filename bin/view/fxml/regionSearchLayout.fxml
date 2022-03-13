@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<StackPane stylesheets="@../css/all.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controller.regionSearchController">
+	<children>
+		<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="1065.0" style="-fx-background-color: #D4F4FA;" stylesheets="@../css/all.css">
+			<children>
+				<VBox layoutX="-5.0" prefHeight="687.0" prefWidth="248.0" style="-fx-background-color: #B2EBF4;" stylesheets="@../css/all.css">
+					<children>
+						<Pane prefHeight="299.0" prefWidth="248.0">
+							<children>
+								<ImageView fitHeight="300.0" fitWidth="240.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="file:C:\Dev\workspace_java\GoodPrice\images\water.png" />
+									</image>
+								</ImageView>
+							</children>
+						</Pane>
+						<Button id="button" fx:id="ureaBtn" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleAllSearchBtn" prefHeight="72.0" prefWidth="273.0" style="-fx-background-color: #B2EBF4;" text="요소수 조회" textFill="#170101">
+							<opaqueInsets>
+								<Insets left="50.0" />
+							</opaqueInsets>
+							<font>
+								<Font name="Yu Gothic UI Regular" size="22.0" />
+							</font>
+						</Button>
+						<Button id="button" fx:id="regionSearchBtn" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleRegionSearchBtn" prefHeight="72.0" prefWidth="273.0" style="-fx-background-color: #B2EBF4;" text="지역별 조회" textFill="#170101">
+							<opaqueInsets>
+								<Insets left="50.0" />
+							</opaqueInsets>
+							<font>
+								<Font size="22.0" />
+							</font>
+						</Button>
+						<Button id="button" fx:id="favlistBtn" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleFavListBtn" prefHeight="72.0" prefWidth="273.0" style="-fx-background-color: #B2EBF4;" text="즐겨찾기" textFill="#170101">
+							<opaqueInsets>
+								<Insets left="50.0" />
+							</opaqueInsets>
+							<font>
+								<Font size="22.0" />
+							</font>
+						</Button>
+					</children>
+					<opaqueInsets>
+						<Insets left="50.0" />
+					</opaqueInsets>
+					<effect>
+						<Glow level="0.0">
+							<input>
+								<InnerShadow />
+							</input>
+						</Glow>
+					</effect>
+				</VBox>
+				<TextField fx:id="regiontxt" layoutX="256.0" layoutY="14.0" prefHeight="33.0" prefWidth="316.0" promptText="지역명을 입력하세요 ex)-시/-도/-군" stylesheets="@../css/all.css" />
+				<Button id="SButton" fx:id="searchBtn" layoutX="572.0" layoutY="13.0" mnemonicParsing="false" onAction="#region" prefHeight="32.0" prefWidth="91.0" style="-fx-background-color: #B2EBF4;" stylesheets="@../css/all.css" text="검색">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<textFill>
+						<RadialGradient centerX="0.5" centerY="0.5242718446601942" focusDistance="-0.24390243902439024" proportional="false" radius="0.20731707317073172">
+							<stops>
+								<Stop color="BLACK" />
+								<Stop color="WHITE" offset="1.0" />
+							</stops>
+						</RadialGradient>
+					</textFill>
+				</Button>
+				<Button id="FButton" fx:id="addFav" layoutX="915.0" layoutY="10.0" mnemonicParsing="false" onAction="#add" stylesheets="@../css/all.css" text="즐겨찾기 추가" />
+				<StackPane layoutX="255.0" layoutY="84.0" prefHeight="591.0" prefWidth="798.0" stylesheets="@../css/all.css">
+					<children>
+						<TableView fx:id="view" prefHeight="603.0" prefWidth="793.0" stylesheets="@../css/all.css">
+							<columns>
+								<TableColumn fx:id="name" prefWidth="159.0" text="주유소명" />
+								<TableColumn fx:id="addr" prefWidth="150.0" text="주유소 주소" />
+								<TableColumn fx:id="inventory" prefWidth="85.0" text="재고량" />
+								<TableColumn fx:id="price" prefWidth="73.0" text="가격" />
+								<TableColumn fx:id="tel" prefWidth="140.0" text="전화번호" />
+								<TableColumn fx:id="regDt" prefWidth="87.0" text="기준시간" />
+								<TableColumn fx:id="code" prefWidth="93.0" text="코드" />
+							</columns>
+						</TableView>
+					</children>
+				</StackPane>
+				<CheckBox fx:id="RIF" layoutX="256.0" layoutY="52.0" mnemonicParsing="false" onAction="#RI" stylesheets="@../css/all.css" text="재고있음" />
+				<CheckBox fx:id="RPF" layoutX="370.0" layoutY="52.0" mnemonicParsing="false" onAction="#RP" stylesheets="@../css/all.css" text="최저가격순" />
+				<CheckBox fx:id="allF" layoutX="495.0" layoutY="52.0" mnemonicParsing="false" onAction="#Rall" stylesheets="@../css/all.css" text="모두적용" />
+            <Button id="RButton" layoutX="804.0" layoutY="10.0" mnemonicParsing="false" onAction="#refresh"  prefWidth="102.0" stylesheets="@../css/all.css" text="새로고침" />
+			</children>
+		</AnchorPane>
+	</children>
+</StackPane>

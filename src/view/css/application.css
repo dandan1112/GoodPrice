@@ -1,0 +1,22 @@
+/*다은 & 민철*/
+
+.button{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-text-fill: #828282;
+}
+
+.button:focused {
+    -fx-border-color: transparent, black;
+    -fx-border-width: 0;
+    -fx-border-style: solid, segments(1, 2);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+.label {
+	-fx-font-size: 37pt;
+	-fx-text-fill: #3DB7CC;
+	-fx-font-family: "Black Han Sans";
+}
