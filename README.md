@@ -2,7 +2,6 @@
 
 # GoodPrice
 
----
 ## Description
 
 [실시간 주유소 재고](https://www.data.go.kr/data/15095040/openapi.do) 공공 API를 활용한 JavaFx+SceneBuilder 기반
